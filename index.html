@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>记账工作台</title>
+</head>
+<body>
+<div id="app" style="text-align:center;padding:50px;font-family:sans-serif;">
+<p>正在加载记账工作台...</p>
+<p style="color:#999;font-size:14px;">如长时间无响应，请刷新页面</p>
+</div>
+<script>
+fetch('https://a4169219af8168cfe.bj9.agentos-app.net/记账工作台.html')
+.then(r => r.text())
+.then(html => {
+  document.open();
+  document.write(html);
+  document.close();
+})
+.catch(e => {
+  document.getElementById('app').innerHTML = '<p>加载失败，请稍后重试</p><p style="color:#999">'+e.message+'</p>';
+});
+</script>
+</body>
+</html>
